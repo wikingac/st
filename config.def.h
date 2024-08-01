@@ -94,7 +94,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.8;
+float alpha = 0.85;
 
 typedef struct {
 	const char* const colors[258]; /* terminal colors */
@@ -109,15 +109,22 @@ typedef struct {
  * foreground, background, cursor, reverse cursor
  */
 static const ColorScheme schemes[] = {
-	// One Half dark
-	{{"#282c34", "#e06c75", "#98c379", "#e5c07b",
-	  "#61afef", "#c678dd", "#56b6c2", "#dcdfe4",
-	  "#282c34", "#e06c75", "#98c379", "#e5c07b",
-	  "#61afef", "#c678dd", "#56b6c2", "#dcdfe4",
+	// Alacritty default
+	{{"#1d1f21", "#cc6666", "#b2bd68", "#f0c674",
+	  "#81a2be", "#b294bb", "#8abeb7", "#c5c8c6",
+	  "#666666", "#d54e53", "#b9ca4a", "#e7c547",
+	  "#7aa6da", "#c397d8", "#70c0b1", "#eaeaea",
+	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
+
+	// ayu dark
+	{{"#01060E", "#EA6C73", "#91b362", "#f9af4f",
+	  "#53bdfa", "#fae994", "#90e1c6", "#c7c7c7", 
+	  "#686868", "#f07178", "#c2d94c", "#ffb454", 
+	  "#59c2ff", "#ffee99", "#95e6cb", "#ffffff",
 	  [256]="#cccccc", "#555555"}, 7, 0, 256, 257},
 
 	// Gruvbox dark
-	{{"#282828", "#cc241d", "#98971a", "#d79921",
+	{{"#1d1f21", "#cc241d", "#98971a", "#d79921",
 	  "#458588", "#b16286", "#689d6a", "#a89984",
 	  "#928374", "#fb4934", "#b8bb26", "#fabd2f",
 	  "#83a598", "#d3869b", "#8ec07c", "#ebdbb2",
