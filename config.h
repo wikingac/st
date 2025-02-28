@@ -6,6 +6,10 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Hack Nerd Font:pixelsize=20:antialias=true:autohint=true";
+
+/* Spare fonts */
+static char *font2[] = { "NotoColorEmoji:pixelsize=20:antialias=true:autohint=true" };
+
 static int borderpx = 0;
 
 /*
@@ -94,7 +98,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 4;
 
 /* bg opacity */
-float alpha = 0.85;
+float alpha = 0.65;
 
 typedef struct {
 	const char* const colors[258]; /* terminal colors */
