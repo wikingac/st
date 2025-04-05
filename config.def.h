@@ -95,7 +95,7 @@ char *termname = "st-256color";
  *
  *	stty tabs
  */
-unsigned int tabspaces = 4;
+unsigned int tabspaces = 8;
 
 /* bg opacity */
 float alpha = 0.65;
@@ -107,6 +107,10 @@ typedef struct {
 	unsigned int cs;               /* cursor */
 	unsigned int rcs;              /* reverse cursor */
 } ColorScheme;
+
+/* Background opacity */
+float alpha_def;
+
 /*
  * Terminal colors (16 first used in escape sequence,
  * 2 last for custom cursor color),
@@ -212,6 +216,9 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+        { MODKEY,               XK_bracketleft, chgalpha,       {.f = -1} }, /* Decrease opacity */
+        { MODKEY|ShiftMask,     XK_braceright,  chgalpha,       {.f = +1} }, /* Increase opacity */
+        { MODKEY,               XK_bracketright,chgalpha,       {.f =  0} }, /* Reset opacity */
 	{ ShiftMask,		XK_Page_Up,	kscrollup,      {.i = -1} },
 	{ ShiftMask,		XK_Page_Down,	kscrolldown,    {.i = -1} },
 };
